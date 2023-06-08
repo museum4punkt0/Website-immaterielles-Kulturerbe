@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_teaser_type_teaser_quotes",
+  "info": {
+    "displayName": "teaser_quote",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "light"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "house": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::house.house"
+    },
+    "in_depth_interview": {
+      "type": "boolean",
+      "default": false
+    },
+    "quote_author": {
+      "type": "string"
+    }
+  }
+}

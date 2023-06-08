@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "page_sections",
+  "info": {
+    "singularName": "page-section",
+    "pluralName": "page-sections",
+    "displayName": "Page_section",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tt_sections": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page-modules.tt"
+    },
+    "sub_sections": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page-modules.page-sub-section"
+    },
+    "headline": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "headline"
+    }
+  }
+}

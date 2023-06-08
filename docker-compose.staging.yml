@@ -1,0 +1,123 @@
+version: '3.7'
+
+variables:
+  TEAM_NAME: museum4punkt0
+  PROJECT_NAME: museum4punkt0
+  FRONTEND_NAME: nuxt
+  BACKEND_NAME: strapi
+  FRONTEND_GATEWAY_NAME: frontend-gateway
+  # following part should not be changed
+  DOCKER_REGISTRY_HOST: ${DOCKER_REGISTRY_HOST}
+  DOCKER_REGISTRY_PORT: 5050
+  DOCKER_REGISTRY: $DOCKER_REGISTRY_HOST:$DOCKER_REGISTRY_PORT
+  FRONTEND_IMAGE: $DOCKER_REGISTRY/$TEAM_NAME/$PROJECT_NAME/$FRONTEND_NAME
+  BACKEND_IMAGE: $DOCKER_REGISTRY/$TEAM_NAME/$PROJECT_NAME/$BACKEND_NAME
+  FRONTEND_GATEWAY_IMAGE: $DOCKER_REGISTRY/$TEAM_NAME/$PROJECT_NAME/$FRONTEND_GATEWAY_NAME
+  TOP_DOMAIN: ${TOP_DOMAIN}
+  BACKEND_DOMAIN: ${BACKEND_DOMAIN:$PROJECT_NAME-backend.$TOP_DOMAIN}
+  FRONTEND_DOMAIN: ${FRONTEND_DOMAIN:$PROJECT_NAME-frontend.$TOP_DOMAIN}
+  FRONTEND_GATEWAY_DOMAIN: ${FRONTEND_GATEWAY_DOMAIN:$PROJECT_NAME.$TOP_DOMAIN}
+  AUTHORIZATION: ${AUTHORIZATION}
+
+services:
+  backend:
+    image: ${BACKEND_IMAGE}:test
+    deploy:
+      labels:
+        traefik.backend.circuitbreaker.expression: NetworkErrorRatio() > 0.1
+        traefik.docker.network: public
+        traefik.enable: "true"
+        traefik.frontend.rule: ${BACKEND_GATEWAY_DOMAIN}
+        traefik.port: '1337'
+    environment:
+      #NODE_ENV: production # check if it works for logging
+      NODE_ENV: development
+      MAIL_TRANSPORT_HOST: ${MAIL_TRANSPORT_HOST}
+      MAIL_TRANSPORT_PORT: ${MAIL_TRANSPORT_PORT}
+      MAIL_TRANSPORT_SECURITY: ${MAIL_TRANSPORT_SECURITY}
+      MAIL_TRANSPORT_USER: ${MAIL_TRANSPORT_USER}
+      MAIL_TRANSPORT_PASSWORD: ${MAIL_TRANSPORT_PASSWORD}
+      MAIL_TRANSPORT_FROM_ADDRESS: ${MAIL_TRANSPORT_FROM_ADDRESS}
+      MAIL_TRANSPORT_TO_ADDRESS: ${MAIL_TRANSPORT_TO_ADDRESS}
+      APP_KEYS: ${STRAPI_APP_KEYS}
+      API_TOKEN_SALT: ${STRAPI_API_TOKEN_SALT}
+      ADMIN_JWT_SECRET: ${STRAPI_ADMIN_JWT_SECRET}
+      DATABASE_FILENAME: ${DATABASE_FILENAME}
+      JWT_SECRET: ${STRAPI_JWT_SECRET}
+      # DVS_ALLOW_ACCESS_ORIGIN:'localhost:3000'
+      # RECAPTCHA_PRIVATE_KEY: "${RECAPTCHA_PRIVATE_KEY}"
+      # TEST_USER_GUID: "${TEST_USER_GUID}"
+      SECRET: "${BACKEND_SECRET}"
+      DATABASE_CLIENT: mysql
+      DATABASE_HOST: db
+      DATABASE_PORT: 3306
+      DATABASE_NAME: strapi
+      DATABASE_USERNAME: strapi
+      DATABASE_PASSWORD: strapi
+      DATABASE_SSL: 'false'
+    volumes:
+      - m4p0-uploads-staging:/opt/app/public/uploads
+    networks:
+      public: {}
+      m4p0-network: {}
+    stop_signal: SIGINT
+
+  db:
+    image: mariadb
+    volumes:
+      - m4p0-data-staging:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: strapi
+      MYSQL_DATABASE: strapi
+      MYSQL_USER: strapi
+      MYSQL_PASSWORD: strapi
+    healthcheck:
+      test: mysqladmin ping -h 127.0.0.1 -u $$MYSQL_USER --password=$$MYSQL_PASSWORD
+      start_period: 5s
+      interval: 5s
+      timeout: 5s
+      retries: 55
+    networks:
+      m4p0-network: {}
+
+  frontend:
+    environment:
+      NODE_ENV: development
+      TEXT_CONTENT_API: ${TEXT_CONTENT_API_DEV}
+    image: ${FRONTEND_IMAGE}:test
+    deploy:
+      labels:
+        traefik.backend.circuitbreaker.expression: NetworkErrorRatio() > 0.1
+        traefik.docker.network: public
+        traefik.enable: "true"
+        traefik.frontend.auth.basic.users: ${AUTHORIZATION}
+        traefik.frontend.rule: ${FRONTEND_DOMAIN}
+        traefik.port: '3000'
+    networks:
+      public: {}
+
+  frontend-gateway:
+    image: ${FRONTEND_GATEWAY_IMAGE}:latest
+    deploy:
+      labels:
+        traefik.backend.circuitbreaker.expression: NetworkErrorRatio() > 0.1
+        traefik.docker.network: public
+        traefik.enable: "true"
+        traefik.frontend.auth.basic.users: ${AUTHORIZATION}
+        traefik.frontend.rule: ${FRONTEND_GATEWAY_DOMAIN}
+        traefik.port: '80'
+    environment:
+      NUXT_SERVER_URL: ${NUXT_SERVER_URL_DEV}
+      STRAPI_SERVER_URL: ${STRAPI_SERVER_URL_DEV}
+    networks:
+      public: {}
+
+networks:
+  public:
+    external: true
+    name: public
+  m4p0-network:
+
+volumes:
+  m4p0-data-staging:
+  m4p0-uploads-staging:

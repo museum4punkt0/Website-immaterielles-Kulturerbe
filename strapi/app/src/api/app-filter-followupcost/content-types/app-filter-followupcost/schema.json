@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "app_filter_followupcosts",
+  "info": {
+    "singularName": "app-filter-followupcost",
+    "pluralName": "app-filter-followupcosts",
+    "displayName": "App_filter_followupcost",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "sort_id": {
+      "type": "integer"
+    }
+  }
+}

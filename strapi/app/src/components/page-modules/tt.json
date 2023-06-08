@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_page_modules_tts",
+  "info": {
+    "displayName": "tt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "teaser": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::teaser.teaser"
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "kind": "collectionType",
+  "collectionName": "houses",
+  "info": {
+    "singularName": "house",
+    "pluralName": "houses",
+    "displayName": "House",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "house_ike_categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::house-ike-category.house-ike-category",
+      "inversedBy": "houses"
+    },
+    "applications": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::application.application",
+      "mappedBy": "house"
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "abstract": {
+      "type": "text"
+    },
+    "adress": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "light"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "link": {
+      "type": "string"
+    },
+    "house_filter_collectionsize": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::house-filter-collectionsize.house-filter-collectionsize"
+    },
+    "house_filter_agency": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::house-filter-agency.house-filter-agency"
+    },
+    "house_filter_visitorcount": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::house-filter-visitorcount.house-filter-visitorcount"
+    },
+    "house_filter_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::house-filter-type.house-filter-type"
+    },
+    "house_filter_keywords": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::house-filter-keyword.house-filter-keyword"
+    },
+    "house_filter_collectionfoci": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::house-filter-collectionfocus.house-filter-collectionfocus"
+    },
+    "house_filter_state": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::house-filter-state.house-filter-state"
+    },
+    "house_filter_communitysize": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::house-filter-communitysize.house-filter-communitysize"
+    },
+    "short_adress": {
+      "type": "string"
+    },
+    "lat": {
+      "type": "string"
+    },
+    "lng": {
+      "type": "string"
+    }
+  }
+}

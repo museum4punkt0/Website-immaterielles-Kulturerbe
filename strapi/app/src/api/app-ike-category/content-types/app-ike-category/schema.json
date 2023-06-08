@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "app_ike_categories",
+  "info": {
+    "singularName": "app-ike-category",
+    "pluralName": "app-ike-categories",
+    "displayName": "App_IKE_category",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "applications": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::application.application",
+      "mappedBy": "app_ike_categories"
+    },
+    "title_long": {
+      "type": "string"
+    }
+  }
+}

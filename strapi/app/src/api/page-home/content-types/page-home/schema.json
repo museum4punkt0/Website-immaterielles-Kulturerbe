@@ -1,0 +1,70 @@
+{
+  "kind": "singleType",
+  "collectionName": "page_homes",
+  "info": {
+    "singularName": "page-home",
+    "pluralName": "page-homes",
+    "displayName": "Page Home",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "cluster_tile_teaser_section": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::cluster-teaser-section.cluster-teaser-section"
+    },
+    "cluster_text_teaser_section": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::cluster-teaser-section.cluster-teaser-section"
+    },
+    "teasers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::teaser.teaser"
+    },
+    "intro_text": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "light"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "good_practise_text": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "light"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "good_practise_teaser": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::teaser.teaser"
+    },
+    "empirics_text": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "light"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "empirics_img": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

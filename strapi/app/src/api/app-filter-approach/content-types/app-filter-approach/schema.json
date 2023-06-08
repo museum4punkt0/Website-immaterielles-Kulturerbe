@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "app_filter_approaches",
+  "info": {
+    "singularName": "app-filter-approach",
+    "pluralName": "app-filter-approaches",
+    "displayName": "App_filter_approach"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    }
+  }
+}

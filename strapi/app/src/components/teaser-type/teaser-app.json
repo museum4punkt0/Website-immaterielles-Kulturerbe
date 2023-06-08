@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_teaser_type_teaser_apps",
+  "info": {
+    "displayName": "teaser_app",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "application": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::application.application"
+    }
+  }
+}

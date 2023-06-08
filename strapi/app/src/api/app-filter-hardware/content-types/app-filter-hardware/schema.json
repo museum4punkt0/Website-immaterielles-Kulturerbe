@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "app_filter_hardwares",
+  "info": {
+    "singularName": "app-filter-hardware",
+    "pluralName": "app-filter-hardwares",
+    "displayName": "App_filter_hardware"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "app_filter_devcosts",
+  "info": {
+    "singularName": "app-filter-devcost",
+    "pluralName": "app-filter-devcosts",
+    "displayName": "App_filter_devcost",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "sort_id": {
+      "type": "integer"
+    }
+  }
+}

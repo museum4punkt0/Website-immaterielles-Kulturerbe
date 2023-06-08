@@ -1,0 +1,59 @@
+version: '3'
+
+vars:
+  BASE_CMD: 'docker-compose'
+  # DEV_COMPOSE_FILE: 'docker-compose-develop.yml'
+  BACKEND_SERVICE: 'backend'
+  # FRONTEND_SERVICE: 'frontend'
+  BACKEND_CONTAINER_IMAGE: 'museum4punkt0-backend'
+  DB_SERVICE: 'db'
+  DB_PROGRAM: 'mysql'
+  DBDUMP_PROGRAM: 'mysqldump'
+  BACKEND_CONTAINER_ROOT: '/opt/app'
+
+tasks:
+  dev:
+    desc: launch with docker-compose up
+    cmds:
+      - "{{ .BASE_CMD }} up"
+
+  build:
+    desc: build with docker-compose build
+    cmds:
+      - "{{ .BASE_CMD }} build --no-cache"
+
+  bash:
+    desc: bash on backend
+    cmds:
+      - "{{ .BASE_CMD }} exec {{ .BACKEND_SERVICE }} bash"
+
+  tar_uploads:
+    desc: make tar ball of public/uploads
+    cmds:
+      - "{{ .BASE_CMD }} exec {{ .BACKEND_SERVICE }} tar czvf uploads.tgz public/uploads"
+      - task cp_from -- uploads.tgz
+    generates:
+      - uploads.tgz
+
+  sql_prompt:
+    desc: run sql prompt of db
+    cmds:
+      - "{{ .BASE_CMD }} exec {{ .DB_SERVICE }} {{ .DB_PROGRAM }} -u strapi -p strapi"
+
+  sql_dump:
+    desc: make database dump
+    cmds:
+      - "{{ .BASE_CMD }} exec {{ .DB_SERVICE }} {{ .DBDUMP_PROGRAM }} -u strapi -p strapi > db.dump"
+    generates:
+      - db.dump
+
+  cp_from:
+    desc: copy file from backend
+    cmds:
+      - CONTAINER_ID=$(docker ps| grep {{ .BACKEND_CONTAINER_IMAGE }} | awk '{ print $1 }'); docker cp $CONTAINER_ID:{{ .BACKEND_CONTAINER_ROOT }}/{{ .CLI_ARGS }} {{ .CLI_ARGS }}
+
+  cp_to:
+    desc: copy file to backend
+    cmds:
+      - CONTAINER_ID=$(docker ps| grep {{ .BACKEND_CONTAINER_IMAGE }} | awk '{ print $1 }'); docker cp {{ .CLI_ARGS }} $CONTAINER_ID:{{ .BACKEND_CONTAINER_ROOT }}/{{ .CLI_ARGS }}
+

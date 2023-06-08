@@ -1,0 +1,131 @@
+.intro{
+  background-color: $white;
+}
+.home{
+  background-color: $appblue;
+  color: $white;
+  .intro{
+    color: $appblue;
+    .bg{
+      background-color: $appblue;
+    }
+  }
+}
+.applications{
+  background-color: $appblue;
+  color: $white;
+  .intro{
+    color: $appblue;
+  }
+  .ike-bar-inner{
+    background-color: $apptagblue;
+    button{
+      color: $white;
+    }
+  }
+  .btn-toggle-ike-bar{
+    background-color: $apptagblue;
+    color: $white;
+  }
+}
+.app-content{
+  background-color: $appblue;
+  color: $white;
+}
+.houses{
+  background-color: $housemint;
+  color: $fontblue;
+  .intro{
+    color: $housemint;
+    .bg{
+      background-color: $housemint;
+    }
+  }
+  .ike-bar-inner,
+  .btn-toggle-ike-bar{
+    color: $darkblue;
+    background-color: $housemintlight;
+  }   
+}
+.house-content{
+  background-color: $housemint;
+  color: $fontblue;
+}
+.gpractice{
+  background-color: $goodterra;
+  color: $white;
+  .intro{
+    color: $goodterra;
+    .bg{
+      background-color: $goodterra;
+    }    
+  }
+  .content-inner{ // content masks
+    &:before, &:after{
+      background-color: $goodterra;
+    }
+  }  
+}
+.empirics{
+  background-color: $white;
+  color: $empiricsgrey;
+  .intro{
+    background-color: $empiricsgrey; 
+    color: $white;
+    .bg{
+      background-color: $white;
+    }       
+  }
+  .content-inner{ // content masks
+    &:before, &:after{
+      background-color: $white;
+    }
+  }    
+}
+.about{
+  background-color: $aboutgrey;
+  color: $white;
+  .intro{
+    color: $aboutgrey;
+    .bg{
+      background-color:$aboutgrey;
+    }  
+  }
+}
+.cluster{
+  background-color: $darkbluelighter;
+  color: $clusterfontblue;
+  // no intro
+}
+.imprint{
+  background-color: $imprintyellow;
+  color: $aboutgrey;
+  .intro{
+    color: $imprintyellow;
+    .bg{
+      background-color: $imprintyellow;
+    }      
+  }
+}
+.privacy{
+  background-color: $imprintyellow;
+  color: $aboutgrey;
+  .intro{
+    color: $imprintyellow;
+    .bg{
+      background-color: $imprintyellow;
+    }      
+  }
+}
+.contact{
+  background-color: $imprintyellow;
+  color: $fontblue;
+}
+
+.home, 
+.cluster, 
+.applications{
+  .logo g{
+    fill: $white;
+  }
+}

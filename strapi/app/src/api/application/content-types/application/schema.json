@@ -1,0 +1,157 @@
+{
+  "kind": "collectionType",
+  "collectionName": "applications",
+  "info": {
+    "singularName": "application",
+    "pluralName": "applications",
+    "displayName": "Application",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "app_ike_categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::app-ike-category.app-ike-category",
+      "inversedBy": "applications"
+    },
+    "house": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::house.house",
+      "inversedBy": "applications"
+    },
+    "clusters": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::cluster.cluster",
+      "mappedBy": "applications"
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "abstract": {
+      "type": "text"
+    },
+    "description": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "light"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "sideinfos": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content-modules.sideinfos"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "benefits": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content-modules.app-benefit"
+    },
+    "learnings": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "light"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "short_description": {
+      "type": "string"
+    },
+    "app_filter_devcost": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::app-filter-devcost.app-filter-devcost"
+    },
+    "app_filter_followupcost": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::app-filter-followupcost.app-filter-followupcost"
+    },
+    "related_applications": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::application.application"
+    },
+    "app_filter_access": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::app-filter-access.app-filter-access"
+    },
+    "app_filter_approaches": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::app-filter-approach.app-filter-approach"
+    },
+    "app_filter_goals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::app-filter-goal.app-filter-goal"
+    },
+    "app_filter_targetgroups": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::app-filter-targetgroup.app-filter-targetgroup"
+    },
+    "app_filter_usages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::app-filter-usage.app-filter-usage"
+    },
+    "app_filter_hardwares": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::app-filter-hardware.app-filter-hardware"
+    },
+    "app_filter_softwares": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::app-filter-software.app-filter-software"
+    },
+    "app_filter_keywords": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::app-filter-keyword.app-filter-keyword"
+    },
+    "app_filter_types": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::app-filter-type.app-filter-type"
+    },
+    "funder": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "light"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    }
+  }
+}

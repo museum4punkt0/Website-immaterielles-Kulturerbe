@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_teaser_type_teaser_houses",
+  "info": {
+    "displayName": "teaser_house",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "house": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::house.house"
+    }
+  }
+}

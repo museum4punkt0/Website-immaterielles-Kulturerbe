@@ -1,0 +1,74 @@
+{
+  "content-manager":{
+    "enabled":true,
+    "pathToPlugin":"/Users/yoshito/work/HH/m4p0-nuxt-strapi/my-project/node_modules/@strapi/plugin-content-manager",
+    "info":{
+      "icon":"plug",
+      "name":"content-manager",
+      "displayName":"Content Manager",
+      "description":"Quick way to see, edit and delete the data in your database.",
+      "required":true,
+      "kind":"plugin"
+    }
+  },
+  "content-type-builder":{
+    "enabled":true,
+    "pathToPlugin":"/Users/yoshito/work/HH/m4p0-nuxt-strapi/my-project/node_modules/@strapi/plugin-content-type-builder",
+    "info":{
+      "name":"content-type-builder",
+      "displayName":"Content Type Builder",
+      "description":"Modelize the data structure of your API. Create new fields and relations in just a minute. The files are automatically created and updated in your project.",
+      "kind":"plugin"
+    }
+  },
+  "email":{
+    "enabled":true,
+    "pathToPlugin":"/Users/yoshito/work/HH/m4p0-nuxt-strapi/my-project/node_modules/@strapi/plugin-email",
+    "info":{
+      "name":"email",
+      "displayName":"Email",
+      "description":"Configure your application to send emails.",
+      "required":true,
+      "kind":"plugin"
+    }
+  },
+  "upload":{
+    "enabled":true,
+    "pathToPlugin":"/Users/yoshito/work/HH/m4p0-nuxt-strapi/my-project/node_modules/@strapi/plugin-upload",
+    "info":{
+      "displayName":"Media Library",
+      "name":"upload",
+      "description":"Media file management.",
+      "required":true,
+      "kind":"plugin"
+    }
+  },
+  "ckeditor":{
+    "enabled":true,
+    "info":{}
+  },
+  "users-permissions":{
+    "enabled":true,
+    "pathToPlugin":"/Users/yoshito/work/HH/m4p0-nuxt-strapi/my-project/node_modules/@strapi/plugin-users-permissions",
+    "info":{
+      "displayName":"Roles & Permissions",
+      "name":"users-permissions",
+      "description":"Protect your API with a full authentication process based on JWT. This plugin comes also with an ACL strategy that allows you to manage the permissions between the groups of users.",
+      "required":true,
+      "kind":"plugin",
+      "packageName":"@strapi/plugin-users-permissions"
+    }
+  },
+  "i18n":{
+    "enabled":true,
+    "pathToPlugin":"/Users/yoshito/work/HH/m4p0-nuxt-strapi/my-project/node_modules/@strapi/plugin-i18n",
+    "info":{
+      "displayName":"Internationalization",
+      "name":"i18n",
+      "description":"This plugin enables to create, to read and to update content in different languages, both from the Admin Panel and from the API.",
+      "required":false,
+      "kind":"plugin",
+      "packageName":"@strapi/plugin-i18n"
+    }
+  }
+}

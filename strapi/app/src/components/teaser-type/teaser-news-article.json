@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_teaser_type_teaser_news_articles",
+  "info": {
+    "displayName": "teaser_news_article",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "light"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    }
+  }
+}

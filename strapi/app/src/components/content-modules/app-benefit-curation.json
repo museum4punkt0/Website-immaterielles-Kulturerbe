@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_content_modules_app_benefit_curations",
+  "info": {
+    "displayName": "App_benefit_curation",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "communication": {
+      "type": "boolean"
+    },
+    "exchange": {
+      "type": "boolean"
+    },
+    "collaboration": {
+      "type": "boolean"
+    },
+    "inclusion": {
+      "type": "boolean"
+    },
+    "perception": {
+      "type": "boolean"
+    },
+    "other": {
+      "type": "boolean"
+    },
+    "remembrance": {
+      "type": "boolean"
+    }
+  }
+}

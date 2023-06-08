@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "app_filter_usages",
+  "info": {
+    "singularName": "app-filter-usage",
+    "pluralName": "app-filter-usages",
+    "displayName": "App_filter_usage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    }
+  }
+}

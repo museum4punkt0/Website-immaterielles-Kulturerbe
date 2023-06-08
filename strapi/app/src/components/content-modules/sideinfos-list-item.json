@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_content_modules_sideinfos_list_items",
+  "info": {
+    "displayName": "Sideinfos_list_item"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    }
+  }
+}

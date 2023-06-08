@@ -1,0 +1,24 @@
+FROM node:lts as builder
+
+WORKDIR /app
+
+ARG TEXT_CONTENT_API
+ENV TEXT_CONTENT_API ${TEXT_CONTENT_API}
+ENV IN_DOCKER true
+
+COPY . .
+
+RUN yarn \
+  --prefer-offline \
+  --non-interactive \
+  --production=false \
+  --ignore-scripts
+
+ENV HOST 0.0.0.0
+EXPOSE 80
+
+# CMD [ "node", "/app/.output/server/index.mjs" ]
+CMD [ "yarn", "dev" ]
+
+
+

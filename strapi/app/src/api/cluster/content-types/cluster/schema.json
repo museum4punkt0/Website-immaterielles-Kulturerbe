@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clusters",
+  "info": {
+    "singularName": "cluster",
+    "pluralName": "clusters",
+    "displayName": "Cluster",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "applications": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::application.application",
+      "inversedBy": "clusters"
+    },
+    "long_title": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "light"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    }
+  }
+}

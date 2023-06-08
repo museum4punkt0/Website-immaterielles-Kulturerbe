@@ -1,0 +1,72 @@
+.copy, .basic-text-section{
+  font-family: 'varela';
+  @include normal();  
+  a{
+    font-family: 'htimes';
+    font-size: 18px;
+    line-height: 30px;
+  }  
+}
+
+.big-2{
+  @include big-2();
+}
+.big-3{
+  @include big-3();
+}
+
+.small{
+  @include small();  
+}
+.small-2{
+  @include small-2();  
+}
+.normal{
+  @include normal();  
+}
+.normal-2{
+  @include normal-2();  
+}
+.copy-subnav-page{
+  @include copySubNavPage();  
+}
+.big-quote{
+  @include big-quote()
+}
+
+.basic-text-section{
+  h2{
+    font-size: 22px;
+    line-height: 32px;    
+    @include break($brd){
+      font-size: 36px;
+      line-height: 44px;
+    }    
+    margin-bottom: 1.5em;
+  }
+}
+
+
+.link{
+  font-family: 'htimes';
+}
+
+// imprint, privacy{
+.imprint, .privacy{
+  h1{
+    @include big-2();
+    margin-bottom: 60px;
+  }
+  strong{
+    @include normal();
+    font-weight: normal;
+  }
+  h2,h3,h4, p{
+    margin-bottom: 1em;
+  }  
+  p{
+    a{
+      font-family: 'htimes';
+    }
+  }
+}

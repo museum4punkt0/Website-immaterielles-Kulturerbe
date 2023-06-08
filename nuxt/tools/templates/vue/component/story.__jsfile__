@@ -1,0 +1,33 @@
+// import module readme
+import readme from './readme.md?raw';
+// import component
+import __component__(pascalCase) from './index.vue';
+
+export default {
+  title: '__type__(titleCase)/__category__(titleCase)/__component__(titleCase)',
+  component: __component__(pascalCase),
+  argTypes: {},
+  parameters: {
+    docs: {
+      description: {
+        component: readme,
+      },
+    },
+    layout: 'fullscreen',
+  },
+};
+
+const Template = (args) => ({
+  components: { __component__(pascalCase) },
+  setup() {
+    return { args };
+  },
+  template: `
+    <__component__(kebabCase) v-bind="args"></__component__(kebabCase)>
+  `,
+});
+
+export const Default = Template.bind({});
+Default.args = {
+  // add story properties
+};

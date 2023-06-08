@@ -1,0 +1,186 @@
+@mixin font-face($font-family, $file-path, $font-weight, $font-style) {
+  @font-face {
+    font-family: $font-family;
+    src: url('#{$file-path}.woff') format('woff');
+    font-weight: $font-weight;
+    font-style: $font-style;
+    font-display: swap;
+  }
+}
+
+@mixin font-face2($font-family, $file-path, $font-weight, $font-style) {
+  @font-face {
+    font-family: $font-family;
+    src: url('#{$file-path}.woff2') format('woff2'), url('#{$file-path}.woff') format('woff');
+    font-weight: $font-weight;
+    font-style: $font-style;
+    font-display: swap;
+  }
+}
+
+// hide scrollbar
+@mixin hideScrollBar(){
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+@mixin break ($break) {
+  @media screen and (min-width: $break) {
+    @content;
+  }
+}
+
+// main container
+@mixin mc(){
+  padding: 0 12px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  @include break($brd){
+    padding: 0 30px;
+    grid-template-columns: repeat(12, 1fr);    
+    gap: 20px;
+  } 
+}
+
+//content padding-top
+@mixin cpt(){
+  padding-top: 130px; // master variable 
+  @include break($brd){
+    padding-top: 250px; // master variable 
+  } 
+}
+@mixin cptImprint(){
+  padding-top: 130px; 
+  padding-bottom: 200px; 
+  @include break($brd){
+    padding-top: 350px; 
+    padding-bottom: 200px; 
+  } 
+}
+@mixin cptGpEmp(){
+  padding-top: 130px; 
+  padding-bottom: 200px;
+  @include break($brd){
+    padding-top: 210px; 
+  } 
+  @include break($brmed){
+    padding-top: 250px; 
+  }   
+}
+
+
+
+// typography
+@mixin hBig(){
+  font-size: 45px;
+  line-height: 48px;
+  @include break($brd){
+    font-size: 80px;
+    line-height: 90px;
+  } 
+}
+
+@mixin big-2(){
+  font-size: 30px;
+  line-height: 38px;
+  @include break($brd){
+    font-size: 45px;
+    line-height: 55px;
+  } 
+}
+
+@mixin big-3(){
+  font-size: 45px;
+  line-height: 53px;
+  @include break($brd){
+    font-size: 80px;
+    line-height: 90px;
+  } 
+}
+
+@mixin normal(){
+  font-size: 18px;
+  line-height: 26px;  
+  @include break($brd){
+    font-size: 28px;
+    line-height: 38px;
+  }
+}
+
+@mixin normal-2(){
+  font-size: 24px;
+  line-height: 30px;  
+  @include break($brd){
+    font-size: 36px;
+    line-height: 47px;
+  }
+}
+
+@mixin small(){
+  font-size: 13px;
+  line-height: 18px;
+  @include break($brd){
+    font-size: 18px;
+    line-height: 26px;
+  }
+  a{
+    font-family: 'htimes';
+    font-size: 15px;
+    line-height: 20px;
+    @include break($brd){
+      font-size: 18px;
+      line-height: 30px;
+    }
+  }
+}
+
+@mixin small-2(){
+  font-size: 13px;
+  line-height: 18px;
+  @include break($brd){
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+@mixin fazit(){
+  font-family: 'htimes';  
+  font-size: 20px;
+  line-height: 28px;
+  @include break($brd){
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+
+@mixin big-quote(){
+  font-family: 'htimes';  
+  font-size: 30px;
+  line-height: 40px;
+  @include break($brd){
+    font-size: 70px;
+    line-height: 100px;
+  }
+}
+
+
+@mixin copySubNavPage(){
+  font-size: 18px;
+  line-height: 26px;
+  @include break($brd){
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+@mixin headlineSubNavPage(){
+  font-size: 24px;
+  line-height: 30px;
+  @include break($brd){
+    font-size: 28px;
+    line-height: 38px;
+  }
+}
+
+

@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "teasers",
+  "info": {
+    "singularName": "teaser",
+    "pluralName": "teasers",
+    "displayName": "Teaser",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "dynamiczone",
+      "components": [
+        "teaser-type.teaser-app",
+        "teaser-type.teaser-house",
+        "teaser-type.teaser-news-article",
+        "teaser-type.teaser-quote"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "center",
+        "left",
+        "right"
+      ]
+    }
+  }
+}

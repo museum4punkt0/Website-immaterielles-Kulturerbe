@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_content_modules_app_benefits",
+  "info": {
+    "displayName": "App_benefit",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "education": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content-modules.app-benefit-education"
+    },
+    "curation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content-modules.app-benefit-curation"
+    },
+    "sustainability": {
+      "type": "component",
+      "repeatable": false,
+      "component": "content-modules.app-benefit-sustainability"
+    }
+  }
+}

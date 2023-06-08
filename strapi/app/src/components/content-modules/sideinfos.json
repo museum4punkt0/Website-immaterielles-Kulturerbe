@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_content_modules_sideinfos",
+  "info": {
+    "displayName": "Sideinfos",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "list_item": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content-modules.sideinfos-list-item"
+    },
+    "link_title": {
+      "type": "string"
+    },
+    "link_textarea": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "light"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "file_title": {
+      "type": "string"
+    },
+    "files": {
+      "allowedTypes": [
+        "files",
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

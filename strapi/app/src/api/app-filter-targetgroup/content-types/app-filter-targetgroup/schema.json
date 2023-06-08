@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "app_filter_targetgroups",
+  "info": {
+    "singularName": "app-filter-targetgroup",
+    "pluralName": "app-filter-targetgroups",
+    "displayName": "App_filter_targetgroup"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    }
+  }
+}

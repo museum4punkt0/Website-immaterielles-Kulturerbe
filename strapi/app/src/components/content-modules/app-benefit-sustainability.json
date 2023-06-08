@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_content_modules_app_benefit_sustainabilities",
+  "info": {
+    "displayName": "App_benefit_sustainability",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "maintenance": {
+      "type": "boolean"
+    },
+    "content_dev": {
+      "type": "boolean"
+    },
+    "functional_dev": {
+      "type": "boolean"
+    },
+    "permanence": {
+      "type": "boolean"
+    },
+    "autonomy": {
+      "type": "boolean"
+    },
+    "other": {
+      "type": "boolean"
+    },
+    "reuse": {
+      "type": "boolean"
+    }
+  }
+}

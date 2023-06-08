@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cluster_teaser_sections",
+  "info": {
+    "singularName": "cluster-teaser-section",
+    "pluralName": "cluster-teaser-sections",
+    "displayName": "Cluster_Teaser_Section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "clusters": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::cluster.cluster"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "section_type": {
+      "type": "enumeration",
+      "enum": [
+        "tile",
+        "text"
+      ],
+      "default": "tile"
+    }
+  }
+}

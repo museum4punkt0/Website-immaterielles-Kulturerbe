@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "house_filter_states",
+  "info": {
+    "singularName": "house-filter-state",
+    "pluralName": "house-filter-states",
+    "displayName": "House_filter_state"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    }
+  }
+}

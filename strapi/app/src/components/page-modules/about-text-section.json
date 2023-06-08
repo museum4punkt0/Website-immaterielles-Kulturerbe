@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_page_modules_about_text_sections",
+  "info": {
+    "displayName": "About_text_section"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "light"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
+    }
+  }
+}

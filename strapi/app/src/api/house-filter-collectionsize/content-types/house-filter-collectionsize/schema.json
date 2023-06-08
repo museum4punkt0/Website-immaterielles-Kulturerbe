@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "house_filter_collectionsizes",
+  "info": {
+    "singularName": "house-filter-collectionsize",
+    "pluralName": "house-filter-collectionsizes",
+    "displayName": "House_filter_collectionsize"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    }
+  }
+}

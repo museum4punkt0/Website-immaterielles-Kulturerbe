@@ -1,0 +1,117 @@
+@include font-face2('varela', 'assets/fonts/varela/varelaround-regular-webfont', 400, normal);
+@include font-face2('htimes', 'assets/fonts/happytimes/happy-times-NG_italic_master_web', 400, normal);
+@include font-face2('courier', 'assets/fonts/courier/courier_prime_sans-webfont', 400, normal);
+
+html,
+body {
+  width: 100%;
+}
+
+body {
+  font-family: 'varela', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: $black;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+}
+
+p {
+}
+
+img{
+  max-width: 100%;
+}
+
+strong {font-weight: 700;}
+
+input,
+button,
+textarea {
+  color: $black;
+  font-size: 1rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+.page-content{
+  min-height: 100vh;
+}
+
+// main-container, with 6 or 12 grid columns
+.mc{
+  @include mc();
+}
+
+.hide-on-desktop{
+  @media (min-width: $brd) {
+    display: none !important;
+  } 
+}
+.hide-on-mobile{
+  @media (max-width: calc(#{$brd} - 1px)) {
+    display: none !important;
+  } 
+}
+
+
+// styles
+.tag{
+  background-color: $whitish;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 0 12px;
+  border-radius: 999px;  
+  // white-space: pre-wrap;
+  // white-space: nowrap;
+  font-family: 'courier';
+  font-size: 12px;
+  line-height: 21px;
+  @include break($brd){
+    padding: 0 14px;
+    font-size: 18px;
+    line-height: 34px;
+    height: 34px;    
+  }
+    overflow: hidden;
+    text-overflow: ellipsis;
+  
+}
+.tag-level-1{
+  background-color: $housemintlight;
+}
+.tag-level-2{
+  background-color: $housemintdark;
+}
+
+// app list
+.app-details-li{
+  border-top: 1px solid #ffffff33;
+  margin-left: 20px;
+  &:first-child{
+    border-top: 0px solid transparent;
+  }
+}
+.app-details-elem{
+  position: relative;
+  display: block;
+  font-family: 'courier';
+  @include small-2;
+  padding: 7px 0;
+  &.selected{
+    &:before{
+      content: '●';
+      font-size: 1.4em;
+      position: absolute;            
+      left: -20px;
+    }
+  }
+}

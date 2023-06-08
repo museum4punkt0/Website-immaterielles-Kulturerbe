@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "page_empiric_sections",
+  "info": {
+    "singularName": "page-empiric-section",
+    "pluralName": "page-empiric-sections",
+    "displayName": "Page_empiric_section",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "headline": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "headline"
+    },
+    "tt_sections": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page-modules.tt"
+    },
+    "sub_sections": {
+      "type": "component",
+      "repeatable": true,
+      "component": "page-modules.page-sub-section"
+    }
+  }
+}

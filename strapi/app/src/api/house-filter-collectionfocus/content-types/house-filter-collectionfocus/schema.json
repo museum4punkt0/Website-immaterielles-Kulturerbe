@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "house_filter_collectionfoci",
+  "info": {
+    "singularName": "house-filter-collectionfocus",
+    "pluralName": "house-filter-collectionfoci",
+    "displayName": "House_filter_collectionfocus"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="27px" height="19px" viewBox="0 0 27 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <g id="mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="museum4.0_mobil_Menu" transform="translate(-309.000000, -767.000000)" stroke="#FFFFFF" stroke-width="1.6">
+            <g id="Kontakt" transform="translate(295.000000, 749.000000)">
+                <g id="Group" transform="translate(14.961021, 18.053088)">
+                    <rect id="Rectangle" x="0.8" y="0.8" width="23.4779588" height="17.2938247" rx="3"></rect>
+                    <path d="M2.25108427,2.27795219 L10.3179684,10.3448364 C11.547718,11.5745859 13.541536,11.5745859 14.7712856,10.3448364 L22.8268745,2.28924745 L22.8268745,2.28924745" id="Path" stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

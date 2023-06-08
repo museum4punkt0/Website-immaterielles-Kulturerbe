@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "houser_filter_visitorcounts",
+  "info": {
+    "singularName": "house-filter-visitorcount",
+    "pluralName": "house-filter-visitorcounts",
+    "displayName": "House_filter_visitorcount",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    }
+  }
+}

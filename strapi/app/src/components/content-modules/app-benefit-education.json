@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_content_modules_app_benefit_educations",
+  "info": {
+    "displayName": "App_benefit_education",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "attractiveness": {
+      "type": "boolean"
+    },
+    "accessibility": {
+      "type": "boolean"
+    },
+    "audience": {
+      "type": "boolean"
+    },
+    "illustration": {
+      "type": "boolean"
+    },
+    "education": {
+      "type": "boolean"
+    },
+    "other": {
+      "type": "boolean"
+    },
+    "diversification": {
+      "type": "boolean"
+    }
+  }
+}

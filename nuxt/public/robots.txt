@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://immateriell.smb.museum/sitemap.xml
